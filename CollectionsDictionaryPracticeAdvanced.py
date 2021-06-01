@@ -21,3 +21,4 @@ print("The dictionary after adding 'Carrol': " +str(build_attendants))
 build_attendants['floor_1'].pop('first_apartment')
 print("Print of the dictionary after removing 1st apartment : " + str(build_attendants))
 
+e
