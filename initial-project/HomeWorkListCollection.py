@@ -28,6 +28,9 @@ print("List after removing employee : " +str(list_of_employees))
 # Sort list
 print(sorted(list_of_employees))
 
+numbers = [5,9,4,1,6,3,8,7,52,41,652,88]
+print(sorted(numbers,reverse=True))
+
 
 
 

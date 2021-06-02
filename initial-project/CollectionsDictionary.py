@@ -26,3 +26,10 @@ job_title_value = "developer"
 new_dictionary = {'job_title': job_title_value }
 
 print("Print the 'new dictionary' : " +str(new_dictionary))
+print ('\n')
+new_employee_a = {'one' : 'Hello','two' : 'my', 'three' : 'world'}
+print(new_employee_a)
+
+new_employee_a ['four']='Hi'
+print(new_employee_a)
+
