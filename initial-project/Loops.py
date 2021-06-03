@@ -22,3 +22,6 @@ for fruits_item_3 in fruits_2:
         print(fruits_item_3)
 
 print("\n")
+
+for x in range(3,20,2):
+    print(x)
