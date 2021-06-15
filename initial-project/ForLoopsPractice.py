@@ -1,5 +1,6 @@
 # Create a list of businesses
 businesses_list = [1500, 2542, 2001, 3500, 5300, 5555, 17000, 21000, 10, 15001]
+total_taxes = 0
 
 for single_income in businesses_list:
     if single_income>=1 or single_income<=2000:
@@ -22,4 +23,6 @@ for single_income in businesses_list:
     print("Printing income after healthcare reduction : " +str(income_after_healthcare_reduction))
 
     total_taxes = total_taxes + tax
+
+    print("Print the total of taxes : " +str(total_taxes))
 

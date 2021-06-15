@@ -12,3 +12,4 @@ for x in range(3, 7):
 
     for x in range(3, 12, 3):
         print(x)
+
