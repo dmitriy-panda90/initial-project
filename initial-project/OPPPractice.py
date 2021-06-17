@@ -43,6 +43,7 @@ ford_focus_instance.get_car_data()
 
 print("\n")
 
+
 # List of Audi
 
 audi_a3_list = [2011, 15000, "audi_a3", False]

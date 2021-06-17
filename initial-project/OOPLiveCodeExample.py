@@ -11,32 +11,32 @@ class Building():
         season_price_buffer = 0
 
         if self.season_in_year == "summer":
-             season_price_buffer = 1.5
+            season_price_buffer = 1.5
 
         elif self.season_in_year == "winter":
             season_price_buffer = 1.1
 
         elif self.season_in_year == "spring":
-            season_price_buffer = 1.4
+            season_price_buffer = 1.3
 
         elif self.season_in_year == "autumn":
-            season_price_buffer = 1.3
+            season_price_buffer == 1.2
+
         else:
             season_price_buffer = None
 
         if self.apartment_size > 130:
-            season_price_buffer += 0.2
+            season_price_buffer += 0.1
 
-            total_rent_price = base_price_per_month * season_price_buffer
+        total_rent_price = base_price_per_month * season_price_buffer
 
+        # String Formatting
+        print("The buffer is :%s" % season_price_buffer)
+        print("The total price is %s" % (total_rent_price))
 
-            # String Formatting
-            print("The buffer is : %s" % season_price_buffer)
-            print("The total price is %s" % total_rent_price)
+        return total_rent_price
 
-            return total_rent_price
-
-    def monthly_maintenace_pay(self,rent_price):
+    def montly_maintenance_pay(self, rent_price):
 
         maintenance = 0
 
@@ -45,21 +45,16 @@ class Building():
 
         else:
             maintenance = 50
-        print("The maintance is : %s " % maintenance)
+
+        print("The maintenance is : %s " % maintenance)
 
 
-# Creation of instance of an object #1
+lease_contract_1 = Building("summer", 4, 135)
+rent_price_1 = lease_contract_1.rent_calculation()
 
-lease_contact_1 = Building ("summer",4 , 135)
-rent_price = lease_contact_1.rent_calculation()
+lease_contract_1.montly_maintenance_pay(rent_price_1)
 
-lease_contact_1.monthly_maintenace_pay(rent_price)
+lease_contract_2 = Building("spring", 6, 100)
 
-
-print("\n")
-
-# Creation of instance of an object #2
-lease_contact_2 = Building ("spring", 6 , 100)
-
-#Methods execution
-lease_contact_2.rent_calculation()
+rent_price_2 = lease_contract_2.rent_calculation()
+lease_contract_2.montly_maintenance_pay(rent_price_2)
