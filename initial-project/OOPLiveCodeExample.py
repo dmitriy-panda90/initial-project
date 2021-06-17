@@ -25,6 +25,7 @@ class Building():
         else:
             season_price_buffer = None
 
+
         if self.apartment_size > 130:
             season_price_buffer += 0.1
 
