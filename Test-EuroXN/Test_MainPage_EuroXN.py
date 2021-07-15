@@ -2,7 +2,7 @@ import unittest
 import random
 from selenium.webdriver.support.ui import Select
 from selenium import webdriver
-
+from time import sleep
 
 
 def random_name():
@@ -31,15 +31,6 @@ def random_phone():
     psw = ''.join([random.choice(ls) for x in range(10)])
     ex3 = psw
     return ex3
-
-def random_password():
-    str1 = "qwertpasdfgfhghllzcbnbvmn"
-    str2 = "1234567890"
-    ls = list (str1+str2)
-    psw = ''.join([random.choice(ls) for x in range(8)])
-    ex4 = psw + "Aa"
-    return ex4
-
 
 class DemoTestPage(unittest.TestCase):
     def setUp(self):
@@ -77,21 +68,26 @@ class DemoTestPage(unittest.TestCase):
         driver.find_element_by_id("phone").send_keys(random_phone())
 
 #Password
+        password = "123456789Aa"
         driver.find_element_by_id("password").click()
         driver.find_element_by_id("password").clear()
-        double_pss = driver.find_element_by_id("password").send_keys(random_password())
+        driver.find_element_by_id("password").send_keys(password)
 
 #Confirm_Password
         driver.find_element_by_id("confirm_password").click()
         driver.find_element_by_id("confirm_password").clear()
-        driver.find_element_by_id().send_keys(double_pss)
+        driver.find_element_by_id("confirm_password").send_keys(password)
 
 #Checkbox_Terms
-        driver.find_element_by_id("//input[@id = 'terms']").click()
-        driver.get_screenshot_as_file("screen2.png")
+        driver.find_element_by_xpath("//body/div[@id='wrapper']/main[1]/section[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/form[1]/div[5]/div[2]/label[1]").click()
 
 
-
+#Submit
+        driver.find_element_by_id("reg_button").submit()
+        driver.get("https://www.euroxn.com/trade-room/")
+        sleep(5)
+        title = driver.title
+        assert "Trading Platform - EuroXN" in title
 
 
 
